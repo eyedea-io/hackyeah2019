@@ -1,6 +1,7 @@
 "use strict"
 
-import aframe from "aframe"
+import aframe from 'aframe'
+import animate from './animation'
 
 // service worker registration - remove if you're not going to use it
 
