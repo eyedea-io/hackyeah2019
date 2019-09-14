@@ -48,5 +48,7 @@
       "@babel/preset-env"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "aframe": "^0.7.0"
+  }
 }

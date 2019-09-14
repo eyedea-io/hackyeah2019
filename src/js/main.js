@@ -1,5 +1,7 @@
 "use strict";
 
+import aframe from 'aframe'
+
 // service worker registration - remove if you're not going to use it
 
 if ('serviceWorker' in navigator) {
