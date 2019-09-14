@@ -1,0 +1,15 @@
+{
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.semi": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "yaml.schemas": {
+    ".vscode/syncano-socket-schema.json": "socket.yml"
+  }
+}
