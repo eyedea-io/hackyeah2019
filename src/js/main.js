@@ -1,6 +1,7 @@
 "use strict"
 
 import animate, { turnCharacter } from "./animation"
+import { getQuestion, showQuestion, handleClick } from "./quiz"
 
 // service worker registration - remove if you're not going to use it
 
@@ -13,6 +14,7 @@ if ("serviceWorker" in navigator) {
           "ServiceWorker registration successful with scope: ",
           registration.scope
         )
+        showQuestion()
       },
       function(err) {
         // registration failed :(
