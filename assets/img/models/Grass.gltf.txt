@@ -1,0 +1,128 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0, 
+            "componentType" : 5125, 
+            "count" : 122148, 
+            "max" : [
+                81431
+            ], 
+            "min" : [
+                0
+            ], 
+            "type" : "SCALAR"
+        }, 
+        {
+            "bufferView" : 1, 
+            "componentType" : 5126, 
+            "count" : 81432, 
+            "max" : [
+                49.86483383178711, 
+                0.3506524860858917, 
+                49.09081268310547
+            ], 
+            "min" : [
+                -49.54416275024414, 
+                -5.2745573242418686e-08, 
+                -49.35374069213867
+            ], 
+            "type" : "VEC3"
+        }, 
+        {
+            "bufferView" : 2, 
+            "componentType" : 5126, 
+            "count" : 81432, 
+            "max" : [
+                0.9999296069145203, 
+                0.7332177758216858, 
+                0.999975860118866
+            ], 
+            "min" : [
+                -0.9999771118164062, 
+                -0.5152654051780701, 
+                -0.9997925758361816
+            ], 
+            "type" : "VEC3"
+        }, 
+        {
+            "bufferView" : 3, 
+            "componentType" : 5126, 
+            "count" : 81432, 
+            "max" : [
+                0.03895298391580582, 
+                0.09748893976211548
+            ], 
+            "min" : [
+                0.03614421933889389, 
+                0.0840073823928833
+            ], 
+            "type" : "VEC2"
+        }
+    ], 
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter", 
+        "version" : "2.0"
+    }, 
+    "bufferViews" : [
+        {
+            "buffer" : 0, 
+            "byteLength" : 488592, 
+            "byteOffset" : 0, 
+            "target" : 34963
+        }, 
+        {
+            "buffer" : 0, 
+            "byteLength" : 977184, 
+            "byteOffset" : 488592, 
+            "target" : 34962
+        }, 
+        {
+            "buffer" : 0, 
+            "byteLength" : 977184, 
+            "byteOffset" : 1465776, 
+            "target" : 34962
+        }, 
+        {
+            "buffer" : 0, 
+            "byteLength" : 651456, 
+            "byteOffset" : 2442960, 
+            "target" : 34962
+        }
+    ], 
+    "buffers" : [
+        {
+            "byteLength" : 3094416, 
+            "uri" : "Grass.bin"
+        }
+    ], 
+    "meshes" : [
+        {
+            "name" : "Grass", 
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2, 
+                        "POSITION" : 1, 
+                        "TEXCOORD_0" : 3
+                    }, 
+                    "indices" : 0
+                }
+            ]
+        }
+    ], 
+    "nodes" : [
+        {
+            "mesh" : 0, 
+            "name" : "Grass"
+        }
+    ], 
+    "scene" : 0, 
+    "scenes" : [
+        {
+            "name" : "Scene", 
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}
