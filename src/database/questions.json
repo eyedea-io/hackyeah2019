@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "question": "What you shouldn’t put into glass container?",
+    "question": "What you shouldn’t put into the container for glass?",
     "answers": {
       "a": "beer bottle",
       "b": "marmolade jar",
@@ -12,7 +12,7 @@
   },
   {
     "id": 1,
-    "question": "How much CO2 come from burning of one litre gasoline?",
+    "question": "How much CO2 is created from burning one litre gasoline?",
     "answers": {
       "a": "576 grams",
       "b": "8,7 kilograms",
@@ -23,7 +23,7 @@
   },
   {
     "id": 2,
-    "question": "How much water is needed to produce one cotton t-shirt?",
+    "question": "How much water is needed to produce one cotton T-shirt?",
     "answers": {
       "a": "15 litres",
       "b": "2700 litres",
@@ -34,7 +34,7 @@
   },
   {
     "id": 3,
-    "question": "Which country from listed has the most drinking water resources?",
+    "question": "Which country from the list owns the most resources of drinking water?",
     "answers": {
       "a": "Mali",
       "b": "Poland",
@@ -45,18 +45,18 @@
   },
   {
     "id": 4,
-    "question": "What is the most polluting waste in oceans",
+    "question": "What is the most polluting waste in the oceans?",
     "answers": {
-      "a": "Plastic Bags",
-      "b": "Straws",
-      "c": "Cigarettes",
-      "d": "Food wrappers"
+      "a": "plastic Bags",
+      "b": "straws",
+      "c": "cigarettes",
+      "d": "food wrappers"
     },
     "correctAnswer": "c"
   },
   {
     "id": 5,
-    "question": "Which of these foods requires the least amount of water per 1 kg",
+    "question": "Which one of these foods requires the least amount of water per 1 kg to be produced?",
     "answers": {
       "a": "wheat",
       "b": "beef",
@@ -67,7 +67,7 @@
   },
   {
     "id": 6,
-    "question": "Which of these items can't be recycled",
+    "question": "Which of these items can't be recycled?",
     "answers": {
       "a": "used pizza box",
       "b": "wine glasses",
@@ -78,7 +78,7 @@
   },
   {
     "id": 7,
-    "question": "Which is the cleanest mean of transportation",
+    "question": "What is the cleanest mean of transportation?",
     "answers": {
       "a": "bike",
       "b": "car",
@@ -100,7 +100,7 @@
   },
   {
     "id": 9,
-    "question": "Which fuel has the most emissions?",
+    "question": "Which fuel produces the most emissions?",
     "answers": {
       "a": "coal",
       "b": "wood pellet",
@@ -111,18 +111,7 @@
   },
   {
     "id": 10,
-    "question": "What that symbol means:",
-    "answers": {
-      "a": "recyclable aluminium",
-      "b": "recyclable polyethylene",
-      "c": "recyclable paper",
-      "d": "non – recyclable waste"
-    },
-    "correctAnswer": "b"
-  },
-  {
-    "id": 11,
-    "question": "What is main cause, that makes polypropylene and polyethylene very hard to recycle?",
+    "question": "What is the main cause, that makes polypropylene and polyethylene very hard to recycle?",
     "answers": {
       "a": "it differs with color",
       "b": "it melts in different temperatures",
@@ -132,8 +121,8 @@
     "correctAnswer": "c"
   },
   {
-    "id": 12,
-    "question": "What is on the top of Waste Hierarchy tool?",
+    "id": 11,
+    "question": "What is on top of the Waste Hierarchy tool?",
     "answers": {
       "a": "minimisation",
       "b": "recycling",
