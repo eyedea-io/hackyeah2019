@@ -32,7 +32,9 @@ export function handleClick(e) {
   if (e.target.id === currentQuestion.correctAnswer) {
     console.log("correct")
     showQuestion()
+    return true
   } else {
     //showCorrectAnswer()
+    return false
   }
 }
