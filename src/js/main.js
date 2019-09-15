@@ -1,6 +1,5 @@
 "use strict"
 
-import aframe from "aframe"
 import animate, { turnCharacter } from "./animation"
 
 // service worker registration - remove if you're not going to use it
@@ -73,7 +72,7 @@ const game = () => {
   return board.forEach((elem, index) => {
     setTimeout(() => {
       if (elem.turn !== undefined) {
-        turnCharacter(".player", elem.turn)
+        turnCharacter(elem.turn)
         setTimeout(() => animate(".player", elem.position), 300)
       } else {
         animate(".player", elem.position)

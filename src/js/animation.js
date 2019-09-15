@@ -10,7 +10,7 @@ const animate = (classOfCharacterToMove, nextPosition) => {
   return animatedCharacter.appendChild(animation)
 }
 
-export const turnCharacter = (classOfCharacterToMove, angle) => {
+export const turnCharacter = angle => {
   const animation = document.createElement("a-animation")
   const animatedCharacter = document.getElementById("main-character")
 
