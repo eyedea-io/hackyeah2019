@@ -1,7 +1,7 @@
 "use strict"
 
 import aframe from "aframe"
-import animate from "./animation"
+import animate, { turnCharacter } from "./animation"
 
 // service worker registration - remove if you're not going to use it
 
@@ -34,47 +34,52 @@ const board = [
   { position: "-3.5 0.4 -0.5" },
   { position: "-3.5 0.4 -1.5" },
   { position: "-3.5 0.4 -2.5" },
-  { position: "-3.5 0.4 -3.5", turn: "right" },
-  { position: "-2.5 0.4 -3.5" },
+  { position: "-3.5 0.4 -3.5" },
+  { position: "-2.5 0.4 -3.5", turn: 90 },
   { position: "-1.5 0.4 -3.5" },
   { position: "-0.5 0.4 -3.5" },
-  { position: "0.5 0.4 -3.5", turn: "right" },
-  { position: "0.5 0.4 -2.5" },
-  { position: "0.5 0.4 -1.5", turn: "right" },
-  { position: "-.5 0.4 -1.5" },
-  { position: "-1.5 0.4 -1.5", turn: "right" },
-  { position: "-1.5 0.4 -0.5" },
+  { position: "0.5 0.4 -3.5" },
+  { position: "0.5 0.4 -2.5", turn: 0 },
+  { position: "0.5 0.4 -1.5" },
+  { position: "-.5 0.4 -1.5", turn: -90 },
+  { position: "-1.5 0.4 -1.5" },
+  { position: "-1.5 0.4 -0.5", turn: 0 },
   { position: "-1.5 0.4 .5" },
-  { position: "-1.5 0.4 1.5", turn: "left" },
-  { position: "-.5 0.4 1.5" },
-  { position: ".5 0.4 1.5", turn: "right" },
-  { position: ".5 0.4 2.5" },
-  { position: ".5 0.4 3.5", turn: "left" },
-  { position: "1.5 0.4 3.5" },
+  { position: "-1.5 0.4 1.5" },
+  { position: "-.5 0.4 1.5", turn: 90 },
+  { position: ".5 0.4 1.5" },
+  { position: ".5 0.4 2.5", turn: 0 },
+  { position: ".5 0.4 3.5" },
+  { position: "1.5 0.4 3.5", turn: 90 },
   { position: "2.5 0.4 3.5" },
   { position: "3.5 0.4 3.5" },
-  { position: "3.5 0.4 2.5", turn: "left" },
+  { position: "3.5 0.4 2.5", turn: 180 },
   { position: "3.5 0.4 1.5" },
   { position: "3.5 0.4 0.5" },
   { position: "3.5 0.4 -0.5" },
-  { position: "2.5 0.4 -0.5", turn: "left" },
+  { position: "2.5 0.4 -0.5", turn: 270 },
   { position: "1.5 0.4 -.5" },
-  { position: "1.5 0.4 -1.5" },
+  { position: "1.5 0.4 -1.5", turn: 180 },
   { position: "1.5 0.4 -2.5" },
-  { position: "2.5 0.4 -2.5" },
+  { position: "2.5 0.4 -2.5", turn: 90 },
   { position: "3.5 0.4 -2.5" },
-  { position: "3.5 0.4 -3.5" },
-  { position: "3.5 0.4 -4.5" },
-  { position: "0 0.4 10" }
+  { position: "3.5 0.4 -3.5", turn: 180 },
+  { position: "3.5 0.4 -4.5" }
 ]
 
 let gameStarted = true
 
 const game = () => {
-  board.forEach((elem, index) => {
-    setTimeout(() => animate(".player", elem.position), 500 * index)
+  return board.forEach((elem, index) => {
+    setTimeout(() => {
+      if (elem.turn !== undefined) {
+        turnCharacter(".player", elem.turn)
+        setTimeout(() => animate(".player", elem.position), 300)
+      } else {
+        animate(".player", elem.position)
+      }
+    }, 1000 * index)
   })
-  return 0
 }
 
 if (gameStarted === true) {
