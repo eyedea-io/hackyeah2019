@@ -14,6 +14,7 @@ html {
 body {
   background: #000;
   color: #fff;
+  font-family: "Gaegu", cursive;
 }
 
 .question {
@@ -30,6 +31,7 @@ body {
   flex-direction: column;
   &__title {
     font-size: 2rem;
+    font-weight: normal;
   }
   &__answers {
     display: grid;
