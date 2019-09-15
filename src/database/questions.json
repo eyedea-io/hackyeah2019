@@ -1,0 +1,145 @@
+[
+  {
+    "id": 0,
+    "question": "What you shouldn’t put into glass container?",
+    "answers": {
+      "a": "beer bottle",
+      "b": "marmolade jar",
+      "c": "cosmetic cream jar",
+      "d": "broken glass"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 1,
+    "question": "How much CO2 come from burning of one litre gasoline?",
+    "answers": {
+      "a": "576 grams",
+      "b": "8,7 kilograms",
+      "c": "2.35 kilograms",
+      "d": "17 grams"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 2,
+    "question": "How much water is needed to produce one cotton t-shirt?",
+    "answers": {
+      "a": "15 litres",
+      "b": "2700 litres",
+      "c": "675 litres",
+      "d": "87 litras"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 3,
+    "question": "Which country from listed has the most drinking water resources?",
+    "answers": {
+      "a": "Mali",
+      "b": "Poland",
+      "c": "Lithuania",
+      "d": "Switzerland"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 4,
+    "question": "What is the most polluting waste in oceans",
+    "answers": {
+      "a": "Plastic Bags",
+      "b": "Straws",
+      "c": "Cigarettes",
+      "d": "Food wrappers"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 5,
+    "question": "Which of these foods requires the least amount of water per 1 kg",
+    "answers": {
+      "a": "wheat",
+      "b": "beef",
+      "c": "pork",
+      "d": "vegetables"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 6,
+    "question": "Which of these items can't be recycled",
+    "answers": {
+      "a": "used pizza box",
+      "b": "wine glasses",
+      "c": "kitchen foil",
+      "d": "diapers"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 7,
+    "question": "Which is the cleanest mean of transportation",
+    "answers": {
+      "a": "bike",
+      "b": "car",
+      "c": "train",
+      "d": "plane"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 8,
+    "question": "Empty milk carton belongs to:",
+    "answers": {
+      "a": "plastic and metal waste bin",
+      "b": "paper bin",
+      "c": "glass bin",
+      "d": "hazardous waste bin"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 9,
+    "question": "Which fuel has the most emissions?",
+    "answers": {
+      "a": "coal",
+      "b": "wood pellet",
+      "c": "wood",
+      "d": "natural gas"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 10,
+    "question": "What that symbol means:",
+    "answers": {
+      "a": "recyclable aluminium",
+      "b": "recyclable polyethylene",
+      "c": "recyclable paper",
+      "d": "non – recyclable waste"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 11,
+    "question": "What is main cause, that makes polypropylene and polyethylene very hard to recycle?",
+    "answers": {
+      "a": "it differs with color",
+      "b": "it melts in different temperatures",
+      "c": "it can not mix together",
+      "d": "it is too light"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 12,
+    "question": "What is on the top of Waste Hierarchy tool?",
+    "answers": {
+      "a": "minimisation",
+      "b": "recycling",
+      "c": "prevention ",
+      "d": "reuse"
+    },
+    "correctAnswer": "c"
+  }
+]
