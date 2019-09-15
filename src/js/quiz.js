@@ -6,7 +6,8 @@ export const getQuestion = () => {
   let selectedId = Math.floor(Math.random() * questions.length)
   const selectedQuestion = questions[selectedId]
   currentQuestion = selectedQuestion
-  // questions = questions.filter(item => item.id != selectedId)
+  questions = questions.filter(item => item != selectedQuestion)
+  console.log(questions)
   return selectedQuestion
 }
 
@@ -32,6 +33,6 @@ export function handleClick(e) {
     console.log("correct")
     showQuestion()
   } else {
-    console.log("incorrect")
+    //showCorrectAnswer()
   }
 }
