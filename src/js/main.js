@@ -4,7 +4,6 @@ import animate, { turnCharacter } from "./animation"
 import database from "../database/questions.json"
 let questions = database
 let currentQuestion = {}
-let gameStarted = true
 let currentCharacterPosition = 0
 let selectedId
 
@@ -37,17 +36,38 @@ const showQuestion = () => {
 function handleClick(e) {
   if (e.target.id === currentQuestion.correctAnswer) {
     console.log("correct")
-    document.querySelector(".question").classList.add("-hidden")
-    ;[1, 2, 3].forEach((elem, index) => {
+    if (currentCharacterPosition > 36) {
+      document.querySelector(".question").style.background =
+        "rgba(255, 255, 255, 0)"
+      document.querySelector(".question").style.color = "green"
+      document.getElementById("title").innerHTML =
+        "Congratulations! You are the most eco person on the Earth!"
+      let a = document.getElementById("a")
+      a.style.display = "none"
+      a.style.color = "#fff"
+      let b = document.getElementById("b")
+      b.style.display = "none"
+      b.style.color = "#fff"
+      let c = document.getElementById("c")
+      c.style.display = "none"
+      c.style.color = "#fff"
+      let d = document.getElementById("d")
+      d.style.display = "none"
+      d.style.color = "#fff"
+      turnCharacter(0)
+    } else {
+      document.querySelector(".question").classList.add("-hidden")
+      ;[1, 2, 3].forEach((elem, index) => {
+        setTimeout(() => {
+          currentCharacterPosition++
+          moveChar()
+        }, 1000 * index)
+      })
       setTimeout(() => {
-        currentCharacterPosition++
-        moveChar()
-      }, 1000 * index)
-    })
-    setTimeout(() => {
-      document.querySelector(".question").classList.remove("-hidden")
-      showQuestion()
-    }, 3000)
+        document.querySelector(".question").classList.remove("-hidden")
+        showQuestion()
+      }, 3000)
+    }
     return true
   } else {
     //showCorrectAnswer()
@@ -63,19 +83,15 @@ function handleClick(e) {
         "rgba(255, 255, 255, 0)"
       document.getElementById("title").innerHTML = "Game Over!"
       let a = document.getElementById("a")
-      a.innerHTML = "Game Over!"
       a.style.display = "none"
       a.style.color = "#fff"
       let b = document.getElementById("b")
-      b.innerHTML = "Game Over!"
       b.style.display = "none"
       b.style.color = "#fff"
       let c = document.getElementById("c")
-      c.innerHTML = "Game Over!"
       c.style.display = "none"
       c.style.color = "#fff"
       let d = document.getElementById("d")
-      d.innerHTML = "Game Over!"
       d.style.display = "none"
       d.style.color = "#fff"
       turnCharacter(180)
