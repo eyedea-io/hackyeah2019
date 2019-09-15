@@ -6,9 +6,10 @@ let questions = database
 let currentQuestion = {}
 let gameStarted = true
 let currentCharacterPosition = 0
+let selectedId
 
 const getQuestion = () => {
-  let selectedId = Math.floor(Math.random() * questions.length)
+  selectedId = Math.floor(Math.random() * questions.length)
   const selectedQuestion = questions[selectedId]
   currentQuestion = selectedQuestion
   questions = questions.filter(item => item != selectedQuestion)
@@ -50,6 +51,58 @@ function handleClick(e) {
     return true
   } else {
     //showCorrectAnswer()
+    document.getElementById(
+      questions[selectedId].correctAnswer
+    ).style.background = "green"
+    currentCharacterPosition = 0
+    setTimeout(() => {
+      document.getElementById(
+        questions[selectedId].correctAnswer
+      ).style.background = "#fff"
+      document.querySelector(".question").style.background =
+        "rgba(255, 255, 255, 0)"
+      document.getElementById("title").innerHTML = "Game Over!"
+      let a = document.getElementById("a")
+      a.innerHTML = "Game Over!"
+      a.style.display = "none"
+      a.style.color = "#fff"
+      let b = document.getElementById("b")
+      b.innerHTML = "Game Over!"
+      b.style.display = "none"
+      b.style.color = "#fff"
+      let c = document.getElementById("c")
+      c.innerHTML = "Game Over!"
+      c.style.display = "none"
+      c.style.color = "#fff"
+      let d = document.getElementById("d")
+      d.innerHTML = "Game Over!"
+      d.style.display = "none"
+      d.style.color = "#fff"
+      turnCharacter(180)
+      moveChar()
+    }, 2000)
+    setTimeout(() => {
+      document.querySelector(".question").classList.add("-hidden")
+    }, 4000)
+    setTimeout(() => {
+      document.querySelector(".question").classList.remove("-hidden")
+      document.querySelector(".question").style.background =
+        "rgba(255, 255, 255, 0.4)"
+      let a = document.getElementById("a")
+      a.style.display = "inherit"
+      a.style.color = "#000"
+      let b = document.getElementById("b")
+      b.style.display = "inherit"
+      b.style.color = "#000"
+      let c = document.getElementById("c")
+      c.style.display = "inherit"
+      c.style.color = "#000"
+      let d = document.getElementById("d")
+      d.style.display = "inherit"
+      d.style.color = "#000"
+
+      showQuestion()
+    }, 6000)
 
     return false
   }

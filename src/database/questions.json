@@ -56,7 +56,7 @@
   },
   {
     "id": 5,
-    "question": "Which one of these foods requires the least amount of water per 1 kg to be produced?",
+    "question": "What food requires the least amount of water per 1 kg to be produced?",
     "answers": {
       "a": "wheat",
       "b": "beef",
