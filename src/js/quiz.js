@@ -6,7 +6,7 @@ export const getQuestion = () => {
   let selectedId = Math.floor(Math.random() * questions.length)
   const selectedQuestion = questions[selectedId]
   currentQuestion = selectedQuestion
-  questions.filter(item => item.id != selectedId)
+  // questions = questions.filter(item => item.id != selectedId)
   return selectedQuestion
 }
 
@@ -27,4 +27,11 @@ export const showQuestion = () => {
   d.addEventListener("click", handleClick)
 }
 
-export function handleClick() {}
+export function handleClick(e) {
+  if (e.target.id === currentQuestion.correctAnswer) {
+    console.log("correct")
+    showQuestion()
+  } else {
+    console.log("incorrect")
+  }
+}
