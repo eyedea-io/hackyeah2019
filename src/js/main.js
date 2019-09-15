@@ -50,6 +50,7 @@ function handleClick(e) {
     return true
   } else {
     //showCorrectAnswer()
+
     return false
   }
 }
