@@ -1,7 +1,9 @@
 "use strict"
 
 import animate, { turnCharacter } from "./animation"
+import { board } from "./board"
 import database from "../database/questions.json"
+
 let questions = database
 let currentQuestion = {}
 let selectedId
@@ -17,7 +19,7 @@ const getQuestion = () => {
   const selectedQuestion = questions[selectedId]
   currentQuestion = selectedQuestion
   questions = questions.filter(item => item !== selectedQuestion)
-  console.log(questions)
+
   return selectedQuestion
 }
 
@@ -147,45 +149,3 @@ if ("serviceWorker" in navigator) {
     )
   })
 }
-
-const board = [
-  { position: "-3.5 0.4 4.5" },
-  { position: "-3.5 0.4 3.5" },
-  { position: "-3.5 0.4 2.5" },
-  { position: "-3.5 0.4 1.5" },
-  { position: "-3.5 0.4 0.5" },
-  { position: "-3.5 0.4 -0.5" },
-  { position: "-3.5 0.4 -1.5" },
-  { position: "-3.5 0.4 -2.5" },
-  { position: "-3.5 0.4 -3.5" },
-  { position: "-2.5 0.4 -3.5", turn: 90 },
-  { position: "-1.5 0.4 -3.5" },
-  { position: "-0.5 0.4 -3.5" },
-  { position: "0.5 0.4 -3.5" },
-  { position: "0.5 0.4 -2.5", turn: 0 },
-  { position: "0.5 0.4 -1.5" },
-  { position: "-.5 0.4 -1.5", turn: -90 },
-  { position: "-1.5 0.4 -1.5" },
-  { position: "-1.5 0.4 -0.5", turn: 0 },
-  { position: "-1.5 0.4 .5" },
-  { position: "-1.5 0.4 1.5" },
-  { position: "-.5 0.4 1.5", turn: 90 },
-  { position: ".5 0.4 1.5" },
-  { position: ".5 0.4 2.5", turn: 0 },
-  { position: ".5 0.4 3.5" },
-  { position: "1.5 0.4 3.5", turn: 90 },
-  { position: "2.5 0.4 3.5" },
-  { position: "3.5 0.4 3.5" },
-  { position: "3.5 0.4 2.5", turn: 180 },
-  { position: "3.5 0.4 1.5" },
-  { position: "3.5 0.4 0.5" },
-  { position: "3.5 0.4 -0.5" },
-  { position: "2.5 0.4 -0.5", turn: 270 },
-  { position: "1.5 0.4 -.5" },
-  { position: "1.5 0.4 -1.5", turn: 180 },
-  { position: "1.5 0.4 -2.5" },
-  { position: "2.5 0.4 -2.5", turn: 90 },
-  { position: "3.5 0.4 -2.5" },
-  { position: "3.5 0.4 -3.5", turn: 180 },
-  { position: "3.5 0.4 -4.5" }
-]
