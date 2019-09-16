@@ -28,7 +28,7 @@
       "a": "15 litres",
       "b": "2700 litres",
       "c": "675 litres",
-      "d": "87 litras"
+      "d": "87 litres"
     },
     "correctAnswer": "c"
   },
@@ -47,7 +47,7 @@
     "id": 4,
     "question": "What is the most polluting waste in the oceans?",
     "answers": {
-      "a": "plastic Bags",
+      "a": "plastic bags",
       "b": "straws",
       "c": "cigarettes",
       "d": "food wrappers"
@@ -113,10 +113,10 @@
     "id": 10,
     "question": "What is the main cause, that makes polypropylene and polyethylene very hard to recycle?",
     "answers": {
-      "a": "it differs with color",
-      "b": "it melts in different temperatures",
-      "c": "it can not mix together",
-      "d": "it is too light"
+      "a": "they differ with color",
+      "b": "they melt in different temperatures",
+      "c": "they can not mix together",
+      "d": "they are too light"
     },
     "correctAnswer": "c"
   },
@@ -126,9 +126,64 @@
     "answers": {
       "a": "minimisation",
       "b": "recycling",
-      "c": "prevention ",
+      "c": "prevention",
       "d": "reuse"
     },
     "correctAnswer": "c"
+  },
+  {
+    "id": 12,
+    "question": "How can you reduce the amount of waste?",
+    "answers": {
+      "a": "only buy what you really have to",
+      "b": "do not keep garbage in your home",
+      "c": "it is not possible",
+      "d": "crush your waste"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 13,
+    "question": "Who is responsible for taking care of the environment?",
+    "answers": {
+      "a": "everyone",
+      "b": "those who are producing waste",
+      "c": "government",
+      "d": "NGO's"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 14,
+    "question": "Where can you wash yourself to use the least amount of water?",
+    "answers": {
+      "a": "in the bathtub",
+      "b": "in the shower",
+      "c": "in the half-filled bathtub",
+      "d": "in the pool"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 15,
+    "question": "What is the color of the book of endangered species?",
+    "answers": {
+      "a": "green",
+      "b": "red",
+      "c": "blue",
+      "d": "black"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 16,
+    "question": "What is the color of the list of threatened species?",
+    "answers": {
+      "a": "green",
+      "b": "red",
+      "c": "blue",
+      "d": "black"
+    },
+    "correctAnswer": "b"
   }
 ]

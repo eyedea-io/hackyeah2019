@@ -36,8 +36,7 @@ const showQuestion = () => {
 
 function handleClick(event) {
   if (event.target.id === currentQuestion.correctAnswer) {
-    console.log("correct answer")
-    if (currentCharacterPosition < 36) {
+    if (currentCharacterPosition < 39) {
       questionField.classList.add("-hidden")
       ;[1, 2, 3].map((elem, index) => {
         setTimeout(() => {
@@ -64,48 +63,9 @@ function handleClick(event) {
       d.style.color = "#fff"
       turnCharacter(0)
     }
+    return true
   } else {
-    //showCorrectAnswer()
-    document.getElementById(
-      questions[selectedId].correctAnswer
-    ).style.background = "green"
-    currentCharacterPosition = 0
-    setTimeout(() => {
-      document.getElementById(
-        questions[selectedId].correctAnswer
-      ).style.background = "#fff"
-      questionField.style.background = "rgba(255, 255, 255, 0)"
-      document.getElementById("title").innerHTML = "Game Over!"
-      a.style.display = "none"
-      a.style.color = "#fff"
-      b.style.display = "none"
-      b.style.color = "#fff"
-      c.style.display = "none"
-      c.style.color = "#fff"
-      d.style.display = "none"
-      d.style.color = "#fff"
-      turnCharacter(180)
-      moveChar()
-    }, 2000)
-    setTimeout(() => {
-      questionField.classList.add("-hidden")
-    }, 4000)
-    setTimeout(() => {
-      questionField.classList.remove("-hidden")
-      questionField.style.background = "rgba(255, 255, 255, 0.4)"
-      a.style.display = "inherit"
-      a.style.color = "#000"
-      b.style.display = "inherit"
-      b.style.color = "#000"
-      c.style.display = "inherit"
-      c.style.color = "#000"
-      d.style.display = "inherit"
-      d.style.color = "#000"
-
-      showQuestion()
-    }, 6000)
-
-    return false
+    showCorrectAnswerAndEndTheGame()
   }
 }
 
@@ -119,6 +79,52 @@ function moveChar() {
   } else {
     animate(".player", board[currentCharacterPosition].position)
   }
+}
+
+function showCorrectAnswerAndEndTheGame() {
+  questions = database
+  currentCharacterPosition = 0
+  document.getElementById(
+    questions[selectedId].correctAnswer
+  ).style.background = "green"
+
+  setTimeout(() => {
+    document.getElementById(
+      questions[selectedId].correctAnswer
+    ).style.background = "#fff"
+    questionField.style.background = "rgba(255, 255, 255, 0)"
+    document.getElementById("title").innerHTML = "Game Over!"
+    a.style.display = "none"
+    a.style.color = "#fff"
+    b.style.display = "none"
+    b.style.color = "#fff"
+    c.style.display = "none"
+    c.style.color = "#fff"
+    d.style.display = "none"
+    d.style.color = "#fff"
+
+    turnCharacter(180)
+    moveChar()
+  }, 2000)
+  setTimeout(() => {
+    questionField.classList.add("-hidden")
+  }, 4000)
+  setTimeout(() => {
+    questionField.classList.remove("-hidden")
+    questionField.style.background = "rgba(255, 255, 255, 0.4)"
+    a.style.display = "inherit"
+    a.style.color = "#000"
+    b.style.display = "inherit"
+    b.style.color = "#000"
+    c.style.display = "inherit"
+    c.style.color = "#000"
+    d.style.display = "inherit"
+    d.style.color = "#000"
+
+    showQuestion()
+  }, 5000)
+
+  return false
 }
 
 // service worker registration - remove if you're not going to use it
