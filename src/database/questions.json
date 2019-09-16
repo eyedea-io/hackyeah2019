@@ -166,18 +166,7 @@
   },
   {
     "id": 15,
-    "question": "What is the color of the book of endangered species?",
-    "answers": {
-      "a": "green",
-      "b": "red",
-      "c": "blue",
-      "d": "black"
-    },
-    "correctAnswer": "b"
-  },
-  {
-    "id": 16,
-    "question": "What is the color of the list of threatened species?",
+    "question": "What is the color of the List of Threatened Species?",
     "answers": {
       "a": "green",
       "b": "red",

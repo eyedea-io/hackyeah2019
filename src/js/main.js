@@ -36,35 +36,39 @@ const showQuestion = () => {
   d.addEventListener("click", handleClick)
 }
 
+const winTheGame = () => {
+  questionField.style.background = "rgba(255, 255, 255, 0)"
+  questionField.style.color = "green"
+  document.getElementById("title").innerHTML =
+    "Congratulations! You are the most eco person on Earth!"
+  a.style.display = "none"
+  a.style.color = "#fff"
+  b.style.display = "none"
+  b.style.color = "#fff"
+  c.style.display = "none"
+  c.style.color = "#fff"
+  d.style.display = "none"
+  d.style.color = "#fff"
+  turnCharacter(0)
+}
+
 function handleClick(event) {
   if (event.target.id === currentQuestion.correctAnswer) {
-    if (currentCharacterPosition < 39) {
-      questionField.classList.add("-hidden")
-      ;[1, 2, 3].map((elem, index) => {
-        setTimeout(() => {
-          currentCharacterPosition++
-          moveChar()
-        }, 1000 * index)
-      })
+    questionField.classList.add("-hidden")
+    ;[1, 2, 3].map((elem, index) => {
       setTimeout(() => {
-        questionField.classList.remove("-hidden")
-        showQuestion()
-      }, 3000)
-    } else {
-      questionField.style.background = "rgba(255, 255, 255, 0)"
-      questionField.style.color = "green"
-      document.getElementById("title").innerHTML =
-        "Congratulations! You are the most eco person on the Earth!"
-      a.style.display = "none"
-      a.style.color = "#fff"
-      b.style.display = "none"
-      b.style.color = "#fff"
-      c.style.display = "none"
-      c.style.color = "#fff"
-      d.style.display = "none"
-      d.style.color = "#fff"
-      turnCharacter(0)
-    }
+        currentCharacterPosition++
+        moveChar()
+      }, 1000 * index)
+    })
+    setTimeout(() => {
+      questionField.classList.remove("-hidden")
+      showQuestion()
+      if (currentCharacterPosition > 38) {
+        return winTheGame()
+      }
+    }, 3000)
+
     return true
   } else {
     showCorrectAnswerAndEndTheGame()
