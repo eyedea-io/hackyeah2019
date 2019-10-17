@@ -14,6 +14,17 @@ const b = document.getElementById("b")
 const c = document.getElementById("c")
 const d = document.getElementById("d")
 
+const setFieldsColors = (firstColor, secondColor) => {
+  a.style.display = firstColor
+  a.style.color = secondColor
+  b.style.display = firstColor
+  b.style.color = secondColor
+  c.style.display = firstColor
+  c.style.color = secondColor
+  d.style.display = firstColor
+  d.style.color = secondColor
+}
+
 const getQuestion = () => {
   selectedId = Math.floor(Math.random() * questions.length)
   const selectedQuestion = questions[selectedId]
@@ -41,14 +52,7 @@ const winTheGame = () => {
   questionField.style.color = "green"
   document.getElementById("title").innerHTML =
     "Congratulations! You are the most eco person on Earth!"
-  a.style.display = "none"
-  a.style.color = "#fff"
-  b.style.display = "none"
-  b.style.color = "#fff"
-  c.style.display = "none"
-  c.style.color = "#fff"
-  d.style.display = "none"
-  d.style.color = "#fff"
+  setFieldsColors("none", "#fff")
   turnCharacter(0)
 }
 
@@ -100,14 +104,7 @@ function showCorrectAnswerAndEndTheGame() {
     ).style.background = "#fff"
     questionField.style.background = "rgba(255, 255, 255, 0)"
     document.getElementById("title").innerHTML = "Game Over!"
-    a.style.display = "none"
-    a.style.color = "#fff"
-    b.style.display = "none"
-    b.style.color = "#fff"
-    c.style.display = "none"
-    c.style.color = "#fff"
-    d.style.display = "none"
-    d.style.color = "#fff"
+    setFieldsColors("none", "#fff")
 
     turnCharacter(180)
     moveChar()
@@ -118,14 +115,7 @@ function showCorrectAnswerAndEndTheGame() {
   setTimeout(() => {
     questionField.classList.remove("-hidden")
     questionField.style.background = "rgba(255, 255, 255, 0.4)"
-    a.style.display = "inherit"
-    a.style.color = "#000"
-    b.style.display = "inherit"
-    b.style.color = "#000"
-    c.style.display = "inherit"
-    c.style.color = "#000"
-    d.style.display = "inherit"
-    d.style.color = "#000"
+    setFieldsColors("inherit", "#000")
 
     showQuestion()
   }, 5000)
