@@ -47,6 +47,13 @@ const showQuestion = () => {
   d.addEventListener("click", handleClick)
 }
 
+const blockAnswerFields = () => {
+  a.removeEventListener("click", handleClick)
+  b.removeEventListener("click", handleClick)
+  c.removeEventListener("click", handleClick)
+  d.removeEventListener("click", handleClick)
+}
+
 const winTheGame = () => {
   questionField.style.background = "rgba(255, 255, 255, 0)"
   questionField.style.color = "green"
@@ -59,6 +66,7 @@ const winTheGame = () => {
 function handleClick(event) {
   if (event.target.id === currentQuestion.correctAnswer) {
     questionField.classList.add("-hidden")
+    blockAnswerFields()
     ;[1, 2, 3].map((elem, index) => {
       setTimeout(() => {
         currentCharacterPosition++
@@ -75,6 +83,7 @@ function handleClick(event) {
 
     return true
   } else {
+    blockAnswerFields()
     showCorrectAnswerAndEndTheGame()
   }
 }
