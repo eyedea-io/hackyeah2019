@@ -130,7 +130,7 @@ const showCorrectAnswerAndEndTheGame = () => {
     questionField.style.background = "rgba(255, 255, 255, 0.4)"
     setFieldsColors("inherit", "#000")
     document.getElementById(questions[selectedId].correctAnswer).style.border =
-      "none"
+      "initial"
 
     showQuestion()
   }, 5000)
