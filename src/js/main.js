@@ -63,7 +63,7 @@ const winTheGame = () => {
   turnCharacter(0)
 }
 
-function handleClick(event) {
+const handleClick = event => {
   if (event.target.id === currentQuestion.correctAnswer) {
     questionField.classList.add("-hidden")
     blockAnswerFields()
@@ -88,7 +88,7 @@ function handleClick(event) {
   }
 }
 
-function moveChar() {
+const moveChar = () => {
   if (board[currentCharacterPosition].turn !== undefined) {
     turnCharacter(board[currentCharacterPosition].turn)
     setTimeout(
@@ -100,7 +100,7 @@ function moveChar() {
   }
 }
 
-function showCorrectAnswerAndEndTheGame() {
+const showCorrectAnswerAndEndTheGame = () => {
   questions = database
   currentCharacterPosition = 0
   document.getElementById(
