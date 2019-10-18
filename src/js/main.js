@@ -105,7 +105,11 @@ const showCorrectAnswerAndEndTheGame = () => {
   currentCharacterPosition = 0
   document.getElementById(
     questions[selectedId].correctAnswer
-  ).style.background = "green"
+  ).style.background = "rgb(57, 148, 14)"
+  document.getElementById(questions[selectedId].correctAnswer).style.color =
+    "yellow"
+  document.getElementById(questions[selectedId].correctAnswer).style.border =
+    "1px solid yellow"
 
   setTimeout(() => {
     document.getElementById(
@@ -125,6 +129,8 @@ const showCorrectAnswerAndEndTheGame = () => {
     questionField.classList.remove("-hidden")
     questionField.style.background = "rgba(255, 255, 255, 0.4)"
     setFieldsColors("inherit", "#000")
+    document.getElementById(questions[selectedId].correctAnswer).style.border =
+      "none"
 
     showQuestion()
   }, 5000)
