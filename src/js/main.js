@@ -58,7 +58,7 @@ const winTheGame = () => {
   questionField.style.background = "rgba(255, 255, 255, 0)"
   questionField.style.color = "green"
   document.getElementById("title").innerHTML =
-    "Congratulations! You are the most eco person on Earth!"
+    "Congratulations! You are the most eco friendly human being!"
   setFieldsColors("none", "#fff")
   turnCharacter(0)
 }
