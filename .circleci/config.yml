@@ -16,6 +16,9 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - cache-
       - run:
+          name: Install gulp-cli
+          command: sudo npm install -g gulp-cli
+      - run:
           name: Installing Dependencies
           command: npm install
       - save_cache:
