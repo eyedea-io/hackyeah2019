@@ -10,9 +10,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run:
-        name: Installing Gulp-CLI
-        command: npm install -g gulp-cli
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
@@ -41,11 +38,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Installing Gulp-CLI
-        command: npm install -g gulp-cli
-      - run:
           name: Install Dependencies
-          run: npm install
+          command: npm install
       - run:
           name: Run game
           command: gulp
