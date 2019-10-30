@@ -1,5 +1,13 @@
 version: 2.1
 
+setup-env: &setup-env
+  run:
+    name: Setting up env variables
+    command: |
+      eval echo "export SLACK_CHANNELID" >> $BASH_ENV
+      eval echo "export SLACK_USERID1" >> $BASH_ENV
+      eval echo "export SLACK_USERID2" >> $BASH_ENV
+
 defaults: &defaults
   working_directory: ~/repo
   docker:
@@ -7,12 +15,19 @@ defaults: &defaults
 
 orbs:
   win: circleci/windows@1.0.0
+  slack: circleci/slack@3.4.0
 
 jobs:
   build-docker:
     <<: *defaults
     steps:
       - checkout
+      - slack/notify:
+          channel: $SLACK_CHANNELID
+          color: "#0a8c37"
+          mentions: $SLACK_USERID1
+          message: Aware Ricky started building on CircleCI
+          webhook: webhook
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
@@ -36,17 +51,11 @@ jobs:
     steps:
       - checkout
       - run:
-          command: runas /noprofile /user:Administrator cmd
-          shell: powershell.exe
-      - run:
           name: Installing gulp-cli
           command: npm install -g gulp-cli
       - run:
           name: Installing dependencies
           command: npm install
-      - run:
-          name: Build
-          command: gulp build
 
 workflows:
   build:
