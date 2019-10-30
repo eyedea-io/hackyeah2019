@@ -7,6 +7,7 @@ setup-env: &setup-env
       eval echo "export SLACK_CHANNELID" >> $BASH_ENV
       eval echo "export SLACK_USERID1" >> $BASH_ENV
       eval echo "export SLACK_USERID2" >> $BASH_ENV
+      eval echo "export SLACK_WEBHOOK" >> $BASH_ENV
 
 defaults: &defaults
   working_directory: ~/repo
