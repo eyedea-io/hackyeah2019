@@ -17,7 +17,6 @@ defaults: &defaults
 orbs:
   win: circleci/windows@1.0.0
   slack: circleci/slack@3.4.0
-  docker: circleci/docker@0.5.13
 
 jobs:
   build-docker:
@@ -63,8 +62,3 @@ workflows:
     jobs:
       - build-docker
       - build-windows
-  build-docker-image-only:
-    jobs:
-      - docker/publish:
-          deploy: false
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
