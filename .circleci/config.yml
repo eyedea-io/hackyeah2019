@@ -27,7 +27,6 @@ jobs:
           color: "#0a8c37"
           mentions: $SLACK_USERID1
           message: Aware Ricky started building on CircleCI
-          webhook: webhook
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
