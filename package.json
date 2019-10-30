@@ -49,6 +49,7 @@
     ]
   },
   "dependencies": {
-    "aframe": "^0.7.0"
+    "aframe": "^0.7.0",
+    "gulp-cli": "^2.2.0"
   }
 }
