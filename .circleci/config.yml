@@ -17,7 +17,7 @@ jobs:
             - cache-
       - run:
           name: Installing Dependencies
-          command: npm install
+          command: npm install --global gulp-cli && npm install
       - save_cache:
           paths:
             - ./node_modules/
