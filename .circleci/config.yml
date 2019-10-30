@@ -29,9 +29,6 @@ jobs:
           color: "#0a8c37"
           mentions: $SLACK_USERID1
           message: Aware Ricky started building on CircleCI
-      - docker/publish:
-          deploy: false
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
@@ -66,3 +63,8 @@ workflows:
     jobs:
       - build-docker
       - build-windows
+  build-docker-image-only:
+    jobs:
+      - docker/publish:
+          deploy: false
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
