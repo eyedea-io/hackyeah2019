@@ -5,8 +5,11 @@ defaults: &defaults
   docker:
     - image: circleci/node:11.7.0
 
+orbs:
+  win: circleci/windows@1.0.0
+
 jobs:
-  deploy:
+  build-docker:
     <<: *defaults
     steps:
       - checkout
@@ -16,7 +19,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - cache-
       - run:
-          name: Install gulp-cli
+          name: Installing gulp-cli
           command: sudo npm install -g gulp-cli
       - run:
           name: Installing Dependencies
@@ -29,25 +32,21 @@ jobs:
           name: Run game
           command: gulp
       - run:
-          name: Add GitHub Deployment success status
-          command: ./tasks/deployment/end.sh success
-          when: on_success
-      - run:
-          name: Add GitHub Deployment error status
-          command: ./tasks/deployment/end.sh error
-          when: on_fail
+          name: End job
+          command: circleci-agent step halt
   build-windows:
     executor: win/vs2019
     steps:
       - checkout
       - run:
+          command: echo 'This is powershell'
+          shell: powershell.exe
+      - run:
           name: Install Dependencies
           command: npm install
-      - run:
-          name: Run game
-          command: gulp
 
 workflows:
-  deploy:
+  build:
     jobs:
-      - deploy
+      - build-docker
+      - build-windows
