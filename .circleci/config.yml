@@ -29,8 +29,8 @@ jobs:
             - ./node_modules/
           key: cache-{{ checksum "package.json" }}
       - run:
-          name: Run game and end the job
-          command: gulp && circleci-agent step halt
+          name: Build
+          command: gulp build
   build-windows:
     executor: win/vs2019
     steps:
@@ -41,6 +41,9 @@ jobs:
       - run:
           name: Installing dependencies
           command: npm install
+      - run:
+          name: Build
+          command: gulp build
 
 workflows:
   build:
