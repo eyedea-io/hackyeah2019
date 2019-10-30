@@ -1,0 +1,62 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:11.7.0
+
+orbs:
+  win: circleci/windows@1.0.0
+
+jobs:
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+        name: Installing Gulp-CLI
+        command: npm install -g gulp-cli
+      - restore_cache:
+          keys:
+            - cache-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - cache-
+      - run:
+          name: Installing Dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - ./node_modules/
+          key: cache-{{ checksum "package.json" }}
+      - run:
+          name: Run game
+          command: gulp
+      - run:
+          name: Add GitHub Deployment success status
+          command: ./tasks/deployment/end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Deployment error status
+          command: ./tasks/deployment/end.sh error
+          when: on_fail
+  build-windows:
+    executor: win/vs2019
+    steps:
+      - checkout
+      - run:
+        name: Installing Gulp-CLI
+        command: npm install -g gulp-cli
+      - run:
+          name: Install Dependencies
+          run: npm install
+      - run:
+          name: Run game
+          command: gulp
+
+workflows:
+  deploy:
+    jobs:
+      - deploy
+  build-windows:
+    jobs:
+      - build-windows
