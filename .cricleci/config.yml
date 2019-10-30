@@ -5,9 +5,6 @@ defaults: &defaults
   docker:
     - image: circleci/node:11.7.0
 
-orbs:
-  win: circleci/windows@1.0.0
-
 jobs:
   deploy:
     <<: *defaults
@@ -57,6 +54,3 @@ workflows:
   deploy:
     jobs:
       - deploy
-  build-windows:
-    jobs:
-      - build-windows
