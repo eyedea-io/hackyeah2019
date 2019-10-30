@@ -22,18 +22,15 @@ jobs:
           name: Installing gulp-cli
           command: sudo npm install -g gulp-cli
       - run:
-          name: Installing Dependencies
+          name: Installing dependencies
           command: npm install
       - save_cache:
           paths:
             - ./node_modules/
           key: cache-{{ checksum "package.json" }}
       - run:
-          name: Run game
-          command: gulp
-      - run:
-          name: End job
-          command: circleci-agent step halt
+          name: Run game and end the job
+          command: gulp && circleci-agent step halt
   build-windows:
     executor: win/vs2019
     steps:
@@ -42,7 +39,7 @@ jobs:
           command: echo 'This is powershell'
           shell: powershell.exe
       - run:
-          name: Install Dependencies
+          name: Installing dependencies
           command: npm install
 
 workflows:
