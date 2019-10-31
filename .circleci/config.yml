@@ -28,6 +28,16 @@ jobs:
           color: "#0a8c37"
           mentions: $SLACK_USERID1
           message: Aware Ricky started building on CircleCI
+      - run:
+          name: "Setup custom environment variables"
+          command: |
+            echo 'export MY_ENV_VAR="CUSTOM"' >> $BASH_ENV
+      - run:
+          name: "What branch am I on now?"
+          command: echo $CIRCLE_BRANCH
+      - run:
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
